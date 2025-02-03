@@ -1,41 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-    color: #333;
-    text-align: center;
-}
-
-header h1 {
-    color: #ff4081;
-    font-size: 2.5em;
-    margin-top: 50px;
-}
-
-#apology-message p {
-    font-size: 1.2em;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-}
-
-button {
-    background-color: #ff4081;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #f50057;
-}
-
-#response p {
-    font-size: 1.5em;
-    color: #4caf50;
-    margin-top: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry, [Baby]</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>I'm Sorry, [Baby]</h1>
+    </header>
+    <main>
+        <section id="apology-message">
+            <p>
+                I am truly sorry for the way I acted earlier. I was hurt and didn’t know how to express my feelings properly.
+                I never meant to make you feel bad, and I know I was wrong. You mean the world to me, and I never want to hurt you again.
+                I love you so much and I appreciate everything you do. Please forgive me.
+            </p>
+        </section>
+        <div id="buttons">
+            <button id="forgiveButton" disabled>Please forgive me</button>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <div id="response" style="display: none;">
+            <p>Please? ❤️</p>
+        </div>
+    </main>
+    <footer>
+        <p>With all my love, [Robert]</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
