@@ -21,6 +21,7 @@ document.getElementById('yesButton').addEventListener('click', function() {
 document.getElementById('noButton').addEventListener('click', function() {
     noClickCount++;  // Increment the "No" button click count
 
+    // Check if the "No" button has been clicked 4 times
     if (noClickCount >= 4) {
         // Show the angry GIF fullscreen
         let angryGif = document.createElement('img');
