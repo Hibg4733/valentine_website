@@ -2,7 +2,7 @@ let pleaseCount = 1;  // This variable will keep track of how many times "No" ha
 
 document.getElementById('yesButton').addEventListener('click', function() {
     document.getElementById('response').style.display = 'block';
-    document.getElementById('response').innerHTML = '<p>Thank you! You mean so much to me. Let\'s work together. ❤️</p>';
+    document.getElementById('response').innerHTML = '<p>Thank you sm baby, you mean so much to me and I love you. ❤️</p>';
 
     // Show the cute bear with hearts
     document.getElementById('bearArea').style.display = 'block';  // Display the bear area
