@@ -1,8 +1,16 @@
-let pleaseCount = 1;  // This variable will keep track of how many times "No" has been clicked.
+let pleaseOptions = [
+    "Please?", "Double Please?", "Triple Please?", "Pepsi Please?", "Cute Please?", "Adorable Please?", "Sweet Please?", "Please, Baby?", "Pretty Please?", "Kindly Please?",
+    "Super Please?", "Best Please?", "Peachy Please?", "Fancy Please?", "Lovely Please?", "Hungry Please?", "Soft Please?", "Sparkly Please?", "Big Please?", "Funny Please?",
+    "Silly Please?", "Tasty Please?", "Happy Please?", "Warm Please?", "Please x1000?", "Forever Please?", "Please pretty please?", "Please for the love of Pepsi?", "Cool Please?",
+    "Fun Please?", "Please, I beg you?", "Cuddly Please?", "Lovable Please?", "Muffin Please?", "Sweetheart Please?", "Fizzy Please?", "Pink Please?", "Perfect Please?", "Rainbow Please?",
+    "Cute as a Button Please?", "Charming Please?", "Delicious Please?", "Endless Please?", "Kind Please?", "Cheerful Please?", "Playful Please?", "Hug Please?", "Kiss Please?", "Magical Please?"
+];
+
+let pleaseCount = 0; // Counter to track which "Please" option is next
 
 document.getElementById('yesButton').addEventListener('click', function() {
     document.getElementById('response').style.display = 'block';
-    document.getElementById('response').innerHTML = '<p>Thank you sm baby, you mean so much to me and I love you. ❤️</p>';
+    document.getElementById('response').innerHTML = '<p>Thank you! You mean so much to me. Let\'s work together. ❤️</p>';
 
     // Show the cute bear with hearts
     document.getElementById('bearArea').style.display = 'block';  // Display the bear area
@@ -10,15 +18,14 @@ document.getElementById('yesButton').addEventListener('click', function() {
 });
 
 document.getElementById('noButton').addEventListener('click', function() {
-    // Update the text of the "Please forgive me" button with a new "Please" count
-    document.getElementById('forgiveButton').innerHTML = `Please ${'?'.repeat(pleaseCount)}`;
+    // Show the next "Please" option from the array
+    document.getElementById('forgiveButton').innerHTML = pleaseOptions[pleaseCount % pleaseOptions.length];  // Loop through options
 
-    // Increase the "Please" count for the next click
+    // Increment the counter to cycle through the "Please" options
     pleaseCount++;
 
-    // Display the updated button text after each "No" click
-    if (pleaseCount > 5) {
-        // If it gets to a high number, stop incrementing the text
-        document.getElementById('forgiveButton').innerHTML = "Pepsi Please?";
+    // If the count goes over 50, we can optionally reset it to start over
+    if (pleaseCount >= pleaseOptions.length) {
+        pleaseCount = 0; // Reset to start over, or you could keep it at the max for fun!
     }
 });
