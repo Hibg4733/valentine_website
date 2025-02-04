@@ -19,6 +19,6 @@ document.getElementById('noButton').addEventListener('click', function() {
     // Display the updated button text after each "No" click
     if (pleaseCount > 5) {
         // If it gets to a high number, stop incrementing the text
-        document.getElementById('forgiveButton').innerHTML = "Please? Forever?";
+        document.getElementById('forgiveButton').innerHTML = "Pepsi Please?";
     }
 });
