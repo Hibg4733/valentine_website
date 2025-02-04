@@ -60,6 +60,8 @@ footer p {
 #bearImage {
     width: 200px;
     height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
 /* Heartbeat animation */
