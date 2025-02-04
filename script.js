@@ -8,6 +8,7 @@ let pleaseOptions = [
 
 let pleaseCount = 0; // Counter to track which "Please" option is next
 let noClickCount = 0; // Counter for the number of "No" clicks
+let angryGifShown = false; // Flag to track if the angry GIF has been shown already
 
 document.getElementById('yesButton').addEventListener('click', function() {
     document.getElementById('response').style.display = 'block';
@@ -22,8 +23,8 @@ document.getElementById('noButton').addEventListener('click', function() {
     noClickCount++;  // Increment the "No" button click count
 
     // Check if the "No" button has been clicked 4 times
-    if (noClickCount >= 4) {
-        // Show the angry GIF fullscreen
+    if (noClickCount >= 4 && !angryGifShown) {
+        // Show the angry GIF fullscreen once
         let angryGif = document.createElement('img');
         angryGif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGMyOWRpOTZkcTZyY3FsbzAzY2pvYjhzYmN5MGdnM2hqcDQ3OHV1OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNFT7eG2rIKK715uLk/giphy.gif";  // Angry GIF link
         angryGif.alt = "Angry Face";
@@ -43,6 +44,9 @@ document.getElementById('noButton').addEventListener('click', function() {
         setTimeout(function() {
             angryGif.style.display = 'none';  // Hide the angry GIF after 2 seconds
         }, 2000);
+
+        // Set the flag to prevent the GIF from showing again
+        angryGifShown = true;
 
         // Reset the "No" counter after the angry GIF is shown
         noClickCount = 0;
