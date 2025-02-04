@@ -1,3 +1,5 @@
+let pleaseCount = 1;  // This variable will keep track of how many times "No" has been clicked.
+
 document.getElementById('yesButton').addEventListener('click', function() {
     document.getElementById('response').style.display = 'block';
     document.getElementById('response').innerHTML = '<p>Thank you! You mean so much to me. Let\'s work together. ❤️</p>';
@@ -8,5 +10,15 @@ document.getElementById('yesButton').addEventListener('click', function() {
 });
 
 document.getElementById('noButton').addEventListener('click', function() {
-    document.getElementById('forgiveButton').innerHTML = 'Please?';
+    // Update the text of the "Please forgive me" button with a new "Please" count
+    document.getElementById('forgiveButton').innerHTML = `Please ${'?'.repeat(pleaseCount)}`;
+
+    // Increase the "Please" count for the next click
+    pleaseCount++;
+
+    // Display the updated button text after each "No" click
+    if (pleaseCount > 5) {
+        // If it gets to a high number, stop incrementing the text
+        document.getElementById('forgiveButton').innerHTML = "Please? Forever?";
+    }
 });
