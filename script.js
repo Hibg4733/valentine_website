@@ -3,7 +3,7 @@ let pleaseOptions = [
     "Super Please?", "Best Please?", "Peachy Please?", "Fancy Please?", "Lovely Please?", "Hungry Please?", "Soft Please?", "Sparkly Please?", "Big Please?", "Funny Please?",
     "Silly Please?", "Tasty Please?", "Happy Please?", "Warm Please?", "Please x1000?", "Forever Please?", "Please pretty please?", "Please for the love of Pepsi?", "Cool Please?",
     "Fun Please?", "Please, I beg you?", "Cuddly Please?", "Lovable Please?", "Muffin Please?", "Sweetheart Please?", "Fizzy Please?", "Pink Please?", "Perfect Please?", "Rainbow Please?",
-    "Cute as a Button Please?", "Charming Please?", "Delicious Please?", "Endless Please?", "Kind Please?", "Cheerful Please?", "Playful Please?", "Hug Please?", "Kiss Please?", "Magical Please?"
+    "Please Baby", "Charming Please?", "Delicious Please?", "Endless Please?", "Kind Please?", "Cheerful Please?", "Playful Please?", "Hug Please?", "Kiss Please?", "Magical Please?"
 ];
 
 let pleaseCount = 0; // Counter to track which "Please" option is next
