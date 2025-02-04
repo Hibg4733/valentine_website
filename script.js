@@ -1,9 +1,9 @@
 let pleaseOptions = [
-    "Please?", "Double Please?", "Triple Please?", "Pepsi Please?", "Cute Please?", "Adorable Please?", "Sweet Please?", "Please, Baby?", "Pretty Please?", "Kindly Please?",
-    "Super Please?", "Best Please?", "Peachy Please?", "Fancy Please?", "Lovely Please?", "Hungry Please?", "Soft Please?", "Sparkly Please?", "Big Please?", "Funny Please?",
-    "Silly Please?", "Tasty Please?", "Happy Please?", "Warm Please?", "Please x1000?", "Forever Please?", "Please pretty please?", "Please for the love of Pepsi?", "Cool Please?",
-    "Fun Please?", "Please, I beg you?", "Cuddly Please?", "Lovable Please?", "Muffin Please?", "Sweetheart Please?", "Fizzy Please?", "Pink Please?", "Perfect Please?", "Rainbow Please?",
-    "Cute as a Button Please?", "Charming Please?", "Delicious Please?", "Endless Please?", "Kind Please?", "Cheerful Please?", "Playful Please?", "Hug Please?", "Kiss Please?", "Magical Please?"
+    "Please?", "Double Please?", "Triple Please?", "Pepsi Please?", "Please baby", "Baby..?", "Grrrrr", "Please ml", "Pretty Please?", "BABYYY",
+    "Super Please?", "Im begging you", "Please im so sorry", "my love please", "Lovely Please?", "cutie?", "please omg", "Kms", "but Im very sorry", "please Im working on it",
+    "baby omg", "just press yes already", "still no?", "but baby", "PLEAAAAAASSSEEEEEEE", "Forever Please?", "Please ml?", "Please for the love of Pepsi?", "theres no way you pressed no on that",
+    "baby cmon", "Please, I beg you", "babyyyyyy JUST CLICK YES", "...", "baby.", "sweetie cmon", "I promise I will work on it", "I pinky promise", "please aaaaa", "idk what to write",
+    "baby please forgive", "cmon you said no too often", "BABYY GRRR", "but I love you", "PLEASE", "huggie", "baby please", "please..", "please dont ignore", "please forgive"
 ];
 
 let pleaseCount = 0; // Counter to track which "Please" option is next
@@ -12,7 +12,7 @@ let angryGifShown = false; // Flag to track if the angry GIF has been shown alre
 
 document.getElementById('yesButton').addEventListener('click', function() {
     document.getElementById('response').style.display = 'block';
-    document.getElementById('response').innerHTML = '<p>Thank you! You mean so much to me. Let\'s work together. ❤️</p>';
+    document.getElementById('response').innerHTML = '<p>Thank you you so much, you mean so much to me and I love you, I hope you can forgive me. ❤️</p>';
 
     // Show the cute bear with hearts
     document.getElementById('bearArea').style.display = 'block';  // Display the bear area
@@ -26,7 +26,7 @@ document.getElementById('noButton').addEventListener('click', function() {
     if (noClickCount >= 4 && !angryGifShown) {
         // Show the angry GIF fullscreen once
         let angryGif = document.createElement('img');
-        angryGif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGMyOWRpOTZkcTZyY3FsbzAzY2pvYjhzYmN5MGdnM2hqcDQ3OHV1OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNFT7eG2rIKK715uLk/giphy.gif";  // Angry GIF link
+        angryGif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTdkNG9lZHR5NHRxejhsZ2JkYnB3OGZqOXc1aDk4MW4zeGVvZGZoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qQdL532ZANbjy/giphy.gif";  // Angry GIF link
         angryGif.alt = "Angry Face";
         angryGif.id = "angryGif";
         angryGif.style.position = 'fixed';
