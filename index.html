@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             background: url('valentines-day-1955236_1920.jpg') no-repeat center center fixed;
@@ -44,6 +43,7 @@
         #no {
             background-color: red;
             color: white;
+            position: relative;
         }
     </style>
 </head>
@@ -59,15 +59,18 @@
         let yesButton = document.getElementById("yes");
         let noButton = document.getElementById("no");
         let yesSize = 20;
-        let noOffset = 0;
-
+        
         noButton.addEventListener("click", function() {
             yesSize += 5;
             yesButton.style.fontSize = yesSize + "px";
             yesButton.style.padding = (yesSize / 2) + "px " + (yesSize) + "px";
             
-            noOffset += 10;
-            noButton.style.transform = `translateX(${noOffset}px)`;
+            let yesRect = yesButton.getBoundingClientRect();
+            let noRect = noButton.getBoundingClientRect();
+            
+            if (yesRect.right >= noRect.left) {
+                noButton.style.transform = `translateX(${yesRect.right - noRect.left + 10}px)`;
+            }
         });
     </script>
 </body>
