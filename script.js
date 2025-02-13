@@ -5,12 +5,23 @@ let gifContainer = document.getElementById("gif-container");
 let sizeIncrease = 1;
 
 noButton.addEventListener("click", function() {
-    sizeIncrease *= 1.2; // Vergrößert den Button jedes Mal, wenn "No" geklickt wird
-    yesButton.style.transform = `scale(${sizeIncrease})`; // Skaliert den Yes-Button
+    // Make the "Yes" button grow each time "No" is clicked
+    sizeIncrease *= 1.2; // Increase size by 20% each time
+    yesButton.style.transform = `scale(${sizeIncrease})`; // Grow the "Yes" button
+
+    // Move "Yes" button away from "No" as it grows
+    let offset = sizeIncrease * 50; // Controls the push distance of the "Yes" button
+    yesButton.style.marginLeft = `${offset}px`;
+
+    // Hide the "No" button once the "Yes" button is too big
+    if (sizeIncrease > 5) { // Adjust this value based on when you want to hide the "No" button
+        noButton.style.opacity = "0";
+        noButton.style.pointerEvents = "none"; // Prevents clicking on the "No" button when it's invisible
+    }
 });
 
 yesButton.addEventListener("click", function() {
-    // Versteckt die Buttons und zeigt den Text + Gif
+    // Hide the buttons and show the gif and message
     document.getElementById("content").style.display = "none";
     gifContainer.style.display = "block";
 });
