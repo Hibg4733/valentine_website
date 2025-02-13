@@ -7,7 +7,6 @@
 body {
     font-family: Arial, sans-serif;
     background-color: white;
-    text-align: center;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,8 +22,12 @@ h1 {
 }
 
 #content {
+    display: flex; /* Use flexbox to center the buttons horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Align the buttons horizontally */
     position: relative;
-    z-index: 1; /* Keeps the buttons in front */
+    z-index: 1;
 }
 
 button {
