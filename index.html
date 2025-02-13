@@ -15,7 +15,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        .container, .message-container, .gif-container, .final-container {
+        .container, .message-container, .gif-container, .final-message-container {
             text-align: center;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
@@ -45,7 +45,7 @@
             color: white;
             position: relative;
         }
-        .message-container, .gif-container, .final-container {
+        .message-container, .gif-container, .final-message-container {
             display: none;
         }
     </style>
@@ -67,10 +67,10 @@
         <p id="message-text">Darija, from the moment I met you, my world became brighter. You are my happiness, my love, my everything.</p>
         <button id="next">Continue</button>
     </div>
-
-    <div class="final-container" id="final-container">
-        <p id="final-message">Baby, I wish I could give you flowers and a lot more today, but sadly this is all I can give you rn :(( I still hope you like it <3</p>
-        <h2>Roblox Gift Code: <strong>A4VDF445FGVDE</strong></h2>
+    
+    <div class="final-message-container" id="final-message-container">
+        <p id="final-text">Baby I wish I could give you flowers and a lot more today, but sadly this is all I can give you rn :(( I still hope you like it <3</p>
+        <p><strong>Roblox Gift Code: A4VDF445FGVDE</strong></p>
     </div>
     
     <script>
@@ -81,13 +81,13 @@
         let messageContainer = document.getElementById("message-container");
         let messageText = document.getElementById("message-text");
         let nextButton = document.getElementById("next");
-        let finalContainer = document.getElementById("final-container");
+        let finalMessageContainer = document.getElementById("final-message-container");
         let yesSize = 20;
         
         const messages = [
-            "Darija, from the moment I met you my world became brighter. You are my happiness, my love and my everything.",
-            "Every day with you is a blessing, and I cant imagine my life without you. You make me the happiest person in the world.",
-            "No words can describe how much I love you, but I want to spend my life showing you just how much you mean to me.",
+            "Darija, from the moment I met you, my world became brighter. You are my happiness, my love, my everything.",
+            "Every day with you is a blessing, and I can't imagine my life without you. You make me the happiest person in the world.",
+            "No words can fully describe how much I love you, but I want to spend my life showing you just how much you mean to me.",
             "You are my heart, my soul, my forever. I love you more than words can express."
         ];
         let messageIndex = 0;
@@ -120,15 +120,13 @@
             if (messageIndex < messages.length) {
                 messageText.innerText = messages[messageIndex];
             } else {
-                messageContainer.innerHTML = '<h1>I love you forever, my babyyyy ❤️</h1><button id="final-next">Continue</button>';
-                
+                messageContainer.innerHTML = "<h1>I love you forever, my darling ❤️</h1><button id='final-next'>Continue</button>";
                 document.getElementById("final-next").addEventListener("click", function() {
                     messageContainer.style.display = "none";
-                    finalContainer.style.display = "block";
+                    finalMessageContainer.style.display = "block";
                 });
             }
         });
     </script>
 </body>
 </html>
-
