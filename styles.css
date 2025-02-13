@@ -9,7 +9,7 @@ html, body {
     width: 100%;  /* Ensure body takes full width of the viewport */
     font-family: Arial, sans-serif;
     background-color: white;
-    background-image: url('gplay.png'); /* Correct background image URL */
+    background-image: url('gplay-1920x1080.png'); /* Use the correct image path */
     background-repeat: repeat; /* Repeat the background image */
     display: flex; /* Center content horizontally and vertically */
     justify-content: center;
