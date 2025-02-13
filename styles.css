@@ -6,17 +6,19 @@
 
 html, body {
     height: 100%; /* Ensure body takes full height of the viewport */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center;     /* Center content vertically */
+    width: 100%;  /* Ensure body takes full width of the viewport */
     font-family: Arial, sans-serif;
     background-color: white;
-    background-image: url('https://www.transparenttextures.com/patterns/heart.png');
-    background-repeat: repeat;
+    background-image: url('gplay.png'); /* Correct background image URL */
+    background-repeat: repeat; /* Repeat the background image */
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 #content {
-    text-align: center; /* Center the text inside */
+    text-align: center;
+    position: relative; /* Position for the text and buttons */
 }
 
 h1 {
@@ -30,6 +32,8 @@ button {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 #yes-btn {
@@ -49,10 +53,10 @@ button {
 #gif-container {
     display: none;
     text-align: center;
+    z-index: 1;
 }
 
 #gif-container img {
     width: 200px;
     margin-top: 20px;
 }
-
