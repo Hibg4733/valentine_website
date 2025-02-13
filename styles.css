@@ -16,18 +16,17 @@ body {
     background-repeat: repeat;
 }
 
+#content {
+    display: flex;              /* Use flexbox to center everything */
+    flex-direction: column;     /* Stack the question and buttons vertically */
+    justify-content: center;    /* Vertically center */
+    align-items: center;        /* Horizontally center */
+    text-align: center;         /* Center the text inside the content */
+}
+
 h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-}
-
-#content {
-    display: flex; /* Use flexbox to center the buttons horizontally and vertically */
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; /* Align the buttons horizontally */
-    position: relative;
-    z-index: 1;
 }
 
 button {
