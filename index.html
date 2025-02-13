@@ -1,23 +1,75 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentinstag</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Valentine's Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('gplay-1920x1080.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
+    <div class="container">
         <h1>Do you want to be my valentine?</h1>
-        <button id="no-btn">No</button>
-        <button id="yes-btn">Yes</button>
+        <div class="buttons">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
     </div>
-    
-    <div id="gif-container" style="display: none;">
-        <p>:D I love you baby</p>
-        <img src="https://media.giphy.com/media/14uQ3VtHd6y3Wg/giphy.gif" alt="Love Gif">
-    </div>
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let yesSize = 20;
+        let noOffset = 0;
 
-    <script src="script.js"></script>
+        noButton.addEventListener("click", function() {
+            yesSize += 5;
+            yesButton.style.fontSize = yesSize + "px";
+            yesButton.style.padding = (yesSize / 2) + "px " + (yesSize) + "px";
+            
+            noOffset += 10;
+            noButton.style.transform = `translateX(${noOffset}px)`;
+        });
+    </script>
 </body>
 </html>
+
