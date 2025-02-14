@@ -15,7 +15,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        .container, .message-container, .gif-container, .final-message-container {
+        .container, .message-container, .gif-container, .final-message-container, .cat-container {
             text-align: center;
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
@@ -45,14 +45,14 @@
             color: white;
             position: relative;
         }
-        .message-container, .gif-container, .final-message-container {
+        .message-container, .gif-container, .final-message-container, .cat-container {
             display: none;
         }
     </style>
 </head>
 <body>
     <div class="container" id="main-container">
-        <h1>Baby, do you want to be my valentine? 🥺</h1>
+        <h1>Do you want to be my valentine?</h1>
         <div class="buttons">
             <button id="yes">Yes</button>
             <button id="no">No</button>
@@ -64,13 +64,20 @@
     </div>
     
     <div class="message-container" id="message-container">
-        <p id="message-text">Darija, from the moment I met you, my world became brighter. You are my happiness, my love and my everything.</p>
+        <p id="message-text">Darija, from the moment I met you, my world became brighter. You are my happiness, my love, my everything.</p>
         <button id="next">Continue</button>
     </div>
     
     <div class="final-message-container" id="final-message-container">
-        <p id="final-text">Baby I wish I could give you flowers, huggies, kisses and a lot more today, but sadly this is all I can give you rn :(( I still hope you like it <3</p>
+        <p id="final-text">Baby I wish I could give you flowers and a lot more today, but sadly this is all I can give you rn :(( I still hope you like it <3</p>
         <p><strong>Roblox Gift Code: A4VDF445FGVDE</strong></p>
+        <button id="cat-next">And these cute cats...</button>
+    </div>
+
+    <div class="cat-container" id="cat-container">
+        <img id="cat-image" src="" alt="Cute Cat" width="300">
+        <br>
+        <button id="next-cat">Continue</button>
     </div>
     
     <script>
@@ -82,15 +89,22 @@
         let messageText = document.getElementById("message-text");
         let nextButton = document.getElementById("next");
         let finalMessageContainer = document.getElementById("final-message-container");
+        let catContainer = document.getElementById("cat-container");
+        let catNextButton = document.getElementById("cat-next");
+        let catImage = document.getElementById("cat-image");
+        let nextCatButton = document.getElementById("next-cat");
         let yesSize = 20;
         
         const messages = [
-            "Darija, from the moment I met you, my world became brighter. You are my happiness, my love and my everything.",
-            "Every day with you is a blessing, and I cant imagine my life without you. You make me the happiest person in the world.",
+            "Darija, from the moment I met you, my world became brighter. You are my happiness, my love, my everything.",
+            "Every day with you is a blessing, and I can't imagine my life without you. You make me the happiest person in the world.",
             "No words can fully describe how much I love you, but I want to spend my life showing you just how much you mean to me.",
-            "You are my heart, my soul, my forever and I love you more than words can express."
+            "You are my heart, my soul, my forever. I love you more than words can express."
         ];
         let messageIndex = 0;
+        
+        const catImages = Array.from({length: 30}, (_, i) => `${i - 3}.webp`);
+        let catIndex = 0;
         
         yesButton.addEventListener("click", function() {
             mainContainer.style.display = "none";
@@ -106,13 +120,6 @@
             yesSize += 5;
             yesButton.style.fontSize = yesSize + "px";
             yesButton.style.padding = (yesSize / 2) + "px " + (yesSize) + "px";
-            
-            let yesRect = yesButton.getBoundingClientRect();
-            let noRect = noButton.getBoundingClientRect();
-            
-            if (yesRect.right >= noRect.left) {
-                noButton.style.transform = `translateX(${yesRect.right - noRect.left + 10}px)`;
-            }
         });
         
         nextButton.addEventListener("click", function() {
@@ -120,13 +127,26 @@
             if (messageIndex < messages.length) {
                 messageText.innerText = messages[messageIndex];
             } else {
-                messageContainer.innerHTML = "<h1>I love you forever, my darling ❤️</h1><button id='final-next'>Continue</button>";
-                document.getElementById("final-next").addEventListener("click", function() {
-                    messageContainer.style.display = "none";
-                    finalMessageContainer.style.display = "block";
-                });
+                messageContainer.style.display = "none";
+                finalMessageContainer.style.display = "block";
+            }
+        });
+        
+        catNextButton.addEventListener("click", function() {
+            finalMessageContainer.style.display = "none";
+            catContainer.style.display = "block";
+            catImage.src = catImages[catIndex];
+        });
+        
+        nextCatButton.addEventListener("click", function() {
+            catIndex++;
+            if (catIndex < catImages.length) {
+                catImage.src = catImages[catIndex];
+            } else {
+                catContainer.innerHTML = "<h1>Happy Valentine's Day! ❤️</h1>";
             }
         });
     </script>
 </body>
 </html>
+
